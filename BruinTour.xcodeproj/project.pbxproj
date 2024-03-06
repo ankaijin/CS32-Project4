@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		71A4F8552B9905EF0040400B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71A4F8542B9905EF0040400B /* main.cpp */; };
+		71BD51542B9917D80067D715 /* geodb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71BD51522B9917D80067D715 /* geodb.cpp */; };
+		71BD51572B9917E10067D715 /* router.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71BD51552B9917E10067D715 /* router.cpp */; };
+		71BD515A2B9917F20067D715 /* tour_generator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71BD51582B9917F20067D715 /* tour_generator.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +33,13 @@
 		71BD51422B9906F20067D715 /* base_classes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_classes.h; sourceTree = "<group>"; };
 		71BD51432B9906F30067D715 /* stops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stops.h; sourceTree = "<group>"; };
 		71BD51442B9906F30067D715 /* tourcmd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tourcmd.h; sourceTree = "<group>"; };
+		71BD51512B9917440067D715 /* HashMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashMap.h; sourceTree = "<group>"; };
+		71BD51522B9917D80067D715 /* geodb.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = geodb.cpp; sourceTree = "<group>"; };
+		71BD51532B9917D80067D715 /* geodb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = geodb.h; sourceTree = "<group>"; };
+		71BD51552B9917E10067D715 /* router.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = router.cpp; sourceTree = "<group>"; };
+		71BD51562B9917E10067D715 /* router.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = router.h; sourceTree = "<group>"; };
+		71BD51582B9917F20067D715 /* tour_generator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tour_generator.cpp; sourceTree = "<group>"; };
+		71BD51592B9917F20067D715 /* tour_generator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tour_generator.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +77,13 @@
 				71BD51402B9906F20067D715 /* geotools.h */,
 				71BD51432B9906F30067D715 /* stops.h */,
 				71BD51442B9906F30067D715 /* tourcmd.h */,
+				71BD51512B9917440067D715 /* HashMap.h */,
+				71BD51522B9917D80067D715 /* geodb.cpp */,
+				71BD51532B9917D80067D715 /* geodb.h */,
+				71BD51552B9917E10067D715 /* router.cpp */,
+				71BD51562B9917E10067D715 /* router.h */,
+				71BD51582B9917F20067D715 /* tour_generator.cpp */,
+				71BD51592B9917F20067D715 /* tour_generator.h */,
 				71A4F8542B9905EF0040400B /* main.cpp */,
 			);
 			path = BruinTour;
@@ -130,6 +147,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				71A4F8552B9905EF0040400B /* main.cpp in Sources */,
+				71BD51572B9917E10067D715 /* router.cpp in Sources */,
+				71BD51542B9917D80067D715 /* geodb.cpp in Sources */,
+				71BD515A2B9917F20067D715 /* tour_generator.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
