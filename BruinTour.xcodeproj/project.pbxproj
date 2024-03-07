@@ -11,6 +11,7 @@
 		71BD51542B9917D80067D715 /* geodb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71BD51522B9917D80067D715 /* geodb.cpp */; };
 		71BD51572B9917E10067D715 /* router.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71BD51552B9917E10067D715 /* router.cpp */; };
 		71BD515A2B9917F20067D715 /* tour_generator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71BD51582B9917F20067D715 /* tour_generator.cpp */; };
+		71BD51602B99797D0067D715 /* support.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71BD515E2B99797D0067D715 /* support.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,8 @@
 		71BD51562B9917E10067D715 /* router.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = router.h; sourceTree = "<group>"; };
 		71BD51582B9917F20067D715 /* tour_generator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tour_generator.cpp; sourceTree = "<group>"; };
 		71BD51592B9917F20067D715 /* tour_generator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tour_generator.h; sourceTree = "<group>"; };
+		71BD515E2B99797D0067D715 /* support.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = support.cpp; sourceTree = "<group>"; };
+		71BD515F2B99797D0067D715 /* support.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = support.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				71BD51582B9917F20067D715 /* tour_generator.cpp */,
 				71BD51592B9917F20067D715 /* tour_generator.h */,
 				71A4F8542B9905EF0040400B /* main.cpp */,
+				71BD515E2B99797D0067D715 /* support.cpp */,
+				71BD515F2B99797D0067D715 /* support.h */,
 			);
 			path = BruinTour;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71BD51602B99797D0067D715 /* support.cpp in Sources */,
 				71A4F8552B9905EF0040400B /* main.cpp in Sources */,
 				71BD51572B9917E10067D715 /* router.cpp in Sources */,
 				71BD51542B9917D80067D715 /* geodb.cpp in Sources */,

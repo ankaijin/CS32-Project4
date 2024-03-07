@@ -1,3 +1,4 @@
+
 #include <cstdio>
 #include <iomanip>
 #include <iostream>
@@ -8,9 +9,11 @@
 #include "router.h"
 #include "stops.h"
 #include "tour_generator.h"
+#include "HashMap.h"    // for testing purposes
 
 using namespace std;
 
+/*
 void print_tour(vector<TourCommand> &tcs)
 {
     double total_dist = 0;
@@ -86,4 +89,16 @@ int main(int argc, char *argv[])
         cout << "Unable to generate tour!\n";
     else
         print_tour(tcs);
+}
+*/
+
+int main()
+{
+    HashMap<int> test(0.2); // when breakpoint is set to here, a problem occurs
+    test.insert("Ankai", 4.0);
+    test.insert("Salaba", 5.0);
+    test.insert("Doodlers", 10.0);
+    test.insert("Resize", 8);
+    test.insert("Resize Again", 80);
+    cout << test.size() << endl;
 }
