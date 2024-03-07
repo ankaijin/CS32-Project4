@@ -94,11 +94,47 @@ int main(int argc, char *argv[])
 
 int main()
 {
-    HashMap<int> test(0.2); // when breakpoint is set to here, a problem occurs
-    test.insert("Ankai", 4.0);
+    /*
+    HashMap<double> test(0.3); // when breakpoint is set to here, a problem occurs
+    test.insert("Ankai", 4.5);
     test.insert("Salaba", 5.0);
     test.insert("Doodlers", 10.0);
     test.insert("Resize", 8);
     test.insert("Resize Again", 80);
-    cout << test.size() << endl;
+    test.insert("Resize Again", 80.8);
+    if (*(test.find("Resize Again")) == 80.8)
+        cout << test.size() << endl;
+    if (test.find("Nathan") == nullptr)
+        cout << "looks like it works" << endl << endl;
+    
+    // new test cases
+    double* DoodlersGPA = test.find("Doodlers");
+    if (DoodlersGPA != nullptr)
+        *DoodlersGPA = 4.6;
+    cout << test["Doodlers"] << endl;
+    test["Annie"] = 3.85;
+    test["Annie"] = 3.95;
+    cout << test["Linda"] << endl;
+    */
+    
+    HashMap<string> test(0.3); // when breakpoint is set to here, a problem occurs
+    test.insert("Ankai", "My name is Thomas");
+    test.insert("Salaba", "Nathan Salaba");
+    test.insert("Doodlers", "ankidoodle");
+    test.insert("Resize Again", "time consuming");
+    test.insert("Resize Again", "super time consuming");
+    if (*(test.find("Resize Again")) == "super time consuming")
+        cout << test.size() << endl;
+    if (test.find("Nathan") == nullptr)
+        cout << "looks like it works" << endl << endl;
+    
+    // new test cases
+    string* DoodlersSays = test.find("Doodlers");
+    if (DoodlersSays != nullptr)
+        *DoodlersSays = "IAKNA";
+    cout << test["Doodlers"] << endl;
+    test["Annie"] = "Hi";
+    test["Annie"] = "Hello peoplesrepublicofchina";
+    if (test["Linda"] == "")
+    cout << "This printed the empty string" << endl;
 }

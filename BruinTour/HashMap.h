@@ -39,7 +39,13 @@ class HashMap
     
     void insert(const std::string& key, const T& value)
     {
-        // TODO: if key already exists, update the key instead of inserting a new one
+        // if key already exists, update the DataPair instead of inserting a new one
+        T* alreadyExists = find(key);
+        if (alreadyExists != nullptr)
+        {
+            *alreadyExists = value;
+            return;
+        }
         
         if ((static_cast<double>(numItems + 1) / numBuckets) > max)  // resize hash table
         {
@@ -49,31 +55,51 @@ class HashMap
             typename std::list<DataPair*>::iterator it = myAssociations.begin();
             for ( ; it != myAssociations.end(); it++)   // O(N) time
             {
-                int bucket = (mapFunction((*it)->myKey, numBuckets) % numBuckets);  // rehash
+                int bucket = mapFunction((*it)->myKey, numBuckets);  // rehash
                 newVectorOfVectors[bucket].push_back((*it));    // push into new vector
             }
             vectorOfVectors = std::move(newVectorOfVectors);    // transfer ownership efficiently
         }
         
         // insert item
-        int bucket = (mapFunction(key, numBuckets) % numBuckets);
+        int bucket = mapFunction(key, numBuckets);
         DataPair* toInsert = new DataPair(key, value);
         vectorOfVectors[bucket].push_back(toInsert);
         myAssociations.push_back(toInsert);
         numItems++;
     }
     
-    // TODO: T* find(const std::string& key) const;
+    T* find(const std::string& key) const
+    {
+        int bucket = mapFunction(key, numBuckets);
+        for (int i = 0; i < vectorOfVectors[bucket].size(); i++)    // iterate through the bucket
+        {
+            if (vectorOfVectors[bucket][i]->myKey == key)   // match found
+                return &(vectorOfVectors[bucket][i]->myValue);  // return the address to the DataPair's value
+        }
+        return nullptr; // match not found
+    }
     
-    // TODO: T& operator[](const std::string& key);
+    T& operator[](const std::string& key)
+    {
+        // if key exists in the HashMap, return a reference to the key's value
+        // otherwise insert a new key, intialize it with default values
+        T* alreadyExists = find(key);
+        if (alreadyExists != nullptr)
+            return *alreadyExists;
+        
+        T defaultValues{};  // does this work?
+        insert(key, defaultValues);
+        return *find(key);
+    }
 
   private:
     struct DataPair
     {
         DataPair(const std::string& key, const T& value)
          : myKey(key), myValue(value) {}
-        T myValue;
         std::string myKey;
+        T myValue;
     };
     int numItems;    // remember to avoid integer division
     int numBuckets;
