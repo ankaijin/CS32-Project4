@@ -95,5 +95,8 @@ using namespace std;
 int main()
 {
     GeoDatabase g1;
-    g1.load("/Users/ankaijin/Desktop/CS32 Xcode/BruinTour/tinymapdata.txt");
+    g1.load("/Users/ankaijin/Desktop/CS32 Xcode/BruinTour/mapdata.txt");
+    GeoPoint poiLoc;
+    g1.get_poi_location("", poiLoc);
+    cout << poiLoc.to_string() << endl;
 }

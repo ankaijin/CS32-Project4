@@ -37,7 +37,7 @@ bool GeoDatabase::load(const string& map_data_file)
         
         iss >> latitude >> longitude;
         GeoPoint geopoint1(latitude, longitude);
-        
+
         iss >> latitude >> longitude;
         GeoPoint geopoint2(latitude, longitude);
         
@@ -71,7 +71,6 @@ bool GeoDatabase::load(const string& map_data_file)
                 // bi-directional association with midpoint
                 GeoToGeo[geopointPOI.to_string()].push_back(Ray("a path", geopointMid));
                 GeoToGeo[geopointMid.to_string()].push_back(Ray("a path", geopointPOI));
-                cerr << poiAddress << "|" << latitude << ", " << longitude << endl;
             }
         }
     }
@@ -80,7 +79,11 @@ bool GeoDatabase::load(const string& map_data_file)
 
 bool GeoDatabase::get_poi_location(const string& poi, GeoPoint& point) const
 {
-    return false;   // placeholder
+    const GeoPoint* poiLocation = POIToGeo.find(poi);
+    if (poiLocation == nullptr)
+        return false;   // POI not found
+    point = *poiLocation;
+    return true;
 }
 
 vector<GeoPoint> GeoDatabase::get_connected_points(const GeoPoint& pt) const
