@@ -51,4 +51,3 @@ private:
 };
 
 #endif // __STOPS_H__
-

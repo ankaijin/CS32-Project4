@@ -73,7 +73,7 @@ class HashMap   // perhaps modify to an implementation using a vector of linked 
         numItems++;
     }
     
-    T* find(const std::string& key) const
+    const T* find(const std::string& key) const
     {
         int bucket = mapFunction(key, numBuckets);
         for (int i = 0; i < vectorOfVectors[bucket].size(); i++)    // iterate through the bucket
@@ -84,20 +84,25 @@ class HashMap   // perhaps modify to an implementation using a vector of linked 
         return nullptr; // match not found
     }
     
+    T* find(const std::string& key) // updated 3/8, provided in new spec
+    {
+        const auto& hm = *this;
+        return const_cast<T*>(hm.find(key));
+    }
+    
     T& operator[](const std::string& key)
     {
         T* alreadyExists = find(key);   // if key exists in the HashMap, return a reference to the key's value
         if (alreadyExists != nullptr)
             return *alreadyExists;
         
-        T defaultValues{};  // does this work?
-        insert(key, defaultValues); // otherwise insert a new key, intialize it with default values
+        insert(key, T()); // otherwise insert a new key, intialize it with default values
         return *find(key);
     }
     
-    HashMap(const HashMap& source) = delete;
+    HashMap(const HashMap&) = delete;
     
-    HashMap& operator=(const HashMap& source) = delete;
+    HashMap& operator=(const HashMap&) = delete;
 
   private:
     struct DataPair

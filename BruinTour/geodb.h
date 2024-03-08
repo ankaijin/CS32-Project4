@@ -13,6 +13,7 @@
 
 #include "base_classes.h"
 #include "geopoint.h"
+#include "geotools.h"
 #include "HashMap.h"
 
 class GeoDatabase : public GeoDatabaseBase
@@ -21,14 +22,16 @@ class GeoDatabase : public GeoDatabaseBase
     GeoDatabase() {}
     virtual ~GeoDatabase() {}
     
-    bool load(const std::string& map_data_file);
-    bool get_poi_location(const std::string& poi, GeoPoint& point) const;   // uses HashMap 2
-    std::vector<GeoPoint> get_connected_points(const GeoPoint& pt) const;   // uses HashMap 1
-    std::string get_street_name(const GeoPoint& pt1, const GeoPoint& pt2) const;    // uses HashMap 1
+    virtual bool load(const std::string& map_data_file);
+    virtual bool get_poi_location(const std::string& poi, GeoPoint& point) const;   // uses HashMap 2
+    virtual std::vector<GeoPoint> get_connected_points(const GeoPoint& pt) const;   // uses HashMap 1
+    virtual std::string get_street_name(const GeoPoint& pt1, const GeoPoint& pt2) const;    // uses HashMap 1
     
   private:  // check if this works
     struct Ray
     {
+        Ray()   // default constructor
+         : streetName("") {}
         Ray(const std::string& street, const GeoPoint& point)
          : streetName(street), endpoint(point) {}
         std::string streetName;
