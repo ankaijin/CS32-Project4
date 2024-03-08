@@ -7,9 +7,3 @@
 
 #include "tour_generator.h"
 
-/*
-class TourGenerator : public TourGeneratorBase
-{
- 
-};
-*/

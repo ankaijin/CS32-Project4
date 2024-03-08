@@ -10,11 +10,12 @@
 #include "stops.h"
 #include "tour_generator.h"
 #include "HashMap.h"    // for testing purposes
+#include "geopoint.h"   // for testing purposes
 
 using namespace std;
 
 /*
-void print_tour(vector<TourCommand> &tcs)
+void print_tour(vector<TourCommand>& tcs)
 {
     double total_dist = 0;
     std::string direction;
@@ -24,7 +25,6 @@ void print_tour(vector<TourCommand> &tcs)
 
     for (size_t i = 0; i < tcs.size(); ++i)
     {
-        // cout << tcs[i] << endl;
         if (tcs[i].get_command_type() == TourCommand::commentary)
         {
             cout << "Welcome to " << tcs[i].get_poi() << "!\n";
@@ -40,8 +40,8 @@ void print_tour(vector<TourCommand> &tcs)
             if (direction.empty())
                 direction = tcs[i].get_direction();
             street_distance += tcs[i].get_distance();
-            if (i < tcs.size() - 1 && tcs[i + 1].get_command_type() == TourCommand::proceed
-                && tcs[i + 1].get_street() == tcs[i].get_street() && tcs[i].get_street() != GeoDatabase::kPathString)
+            if (i+1 < tcs.size() && tcs[i+1].get_command_type() == TourCommand::proceed
+                && tcs[i+1].get_street() == tcs[i].get_street() && tcs[i].get_street() != "a path")
             {
                 continue;
             }
@@ -61,14 +61,14 @@ int main(int argc, char *argv[])
     if (argc != 3)
     {
         cout << "usage: BruinNav mapdata.txt stops.txt\n";
-        return -1;
+        return 1;
     }
 
     GeoDatabase geodb;
     if (!geodb.load(argv[1]))
     {
         cout << "Unable to load map data: " << argv[1] << endl;
-        return -1;
+        return 1;
     }
 
     Router router(geodb);
@@ -78,12 +78,11 @@ int main(int argc, char *argv[])
     if (!stops.load(argv[2]))
     {
         cout << "Unable to load tour data: " << argv[2] << endl;
-        return -1;
+        return 1;
     }
 
-    std::cout << "\nRouting...\n\n";
+    std::cout << "Routing...\n\n";
 
-    string error;
     vector<TourCommand> tcs = tg.generate_tour(stops);
     if (tcs.empty())
         cout << "Unable to generate tour!\n";
@@ -94,47 +93,11 @@ int main(int argc, char *argv[])
 
 int main()
 {
-    /*
-    HashMap<double> test(0.3); // when breakpoint is set to here, a problem occurs
-    test.insert("Ankai", 4.5);
-    test.insert("Salaba", 5.0);
-    test.insert("Doodlers", 10.0);
-    test.insert("Resize", 8);
-    test.insert("Resize Again", 80);
-    test.insert("Resize Again", 80.8);
-    if (*(test.find("Resize Again")) == 80.8)
-        cout << test.size() << endl;
-    if (test.find("Nathan") == nullptr)
-        cout << "looks like it works" << endl << endl;
-    
-    // new test cases
-    double* DoodlersGPA = test.find("Doodlers");
-    if (DoodlersGPA != nullptr)
-        *DoodlersGPA = 4.6;
-    cout << test["Doodlers"] << endl;
-    test["Annie"] = 3.85;
-    test["Annie"] = 3.95;
-    cout << test["Linda"] << endl;
-    */
-    
-    HashMap<string> test(0.3); // when breakpoint is set to here, a problem occurs
-    test.insert("Ankai", "My name is Thomas");
-    test.insert("Salaba", "Nathan Salaba");
-    test.insert("Doodlers", "ankidoodle");
-    test.insert("Resize Again", "time consuming");
-    test.insert("Resize Again", "super time consuming");
-    if (*(test.find("Resize Again")) == "super time consuming")
-        cout << test.size() << endl;
-    if (test.find("Nathan") == nullptr)
-        cout << "looks like it works" << endl << endl;
-    
-    // new test cases
-    string* DoodlersSays = test.find("Doodlers");
-    if (DoodlersSays != nullptr)
-        *DoodlersSays = "IAKNA";
-    cout << test["Doodlers"] << endl;
-    test["Annie"] = "Hi";
-    test["Annie"] = "Hello peoplesrepublicofchina";
-    if (test["Linda"] == "")
-    cout << "This printed the empty string" << endl;
+    GeoDatabase g1;
+    g1.load("/Users/ankaijin/Desktop/CS32 Xcode/BruinTour/tinymapdata.txt");
+    vector<GeoPoint> gp = g1.get_connected_points(GeoPoint("34.0555356", "-118.4798135"));
+    for (int i = 0; i < gp.size(); i++)
+    {
+        cout << gp[i].to_string() << endl;
+    }
 }

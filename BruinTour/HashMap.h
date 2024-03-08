@@ -16,11 +16,15 @@
 #include "support.h"
 
 template<typename T>
-class HashMap
+class HashMap   // perhaps modify to an implementation using a vector of linked lists
 {
   public:
     HashMap(double maxLoad = 0.75) // hash table constructer with default parameter
-     : numItems(0), numBuckets(10), max(maxLoad), vectorOfVectors(10) {}
+     : numItems(0), numBuckets(10), max(maxLoad), vectorOfVectors(10) 
+    {
+        if (max <= 0)
+            max = 0.75;
+    }
     
     ~HashMap()
     {
@@ -82,16 +86,18 @@ class HashMap
     
     T& operator[](const std::string& key)
     {
-        // if key exists in the HashMap, return a reference to the key's value
-        // otherwise insert a new key, intialize it with default values
-        T* alreadyExists = find(key);
+        T* alreadyExists = find(key);   // if key exists in the HashMap, return a reference to the key's value
         if (alreadyExists != nullptr)
             return *alreadyExists;
         
         T defaultValues{};  // does this work?
-        insert(key, defaultValues);
+        insert(key, defaultValues); // otherwise insert a new key, intialize it with default values
         return *find(key);
     }
+    
+    HashMap(const HashMap& source) = delete;
+    
+    HashMap& operator=(const HashMap& source) = delete;
 
   private:
     struct DataPair
@@ -99,7 +105,7 @@ class HashMap
         DataPair(const std::string& key, const T& value)
          : myKey(key), myValue(value) {}
         std::string myKey;
-        T myValue;
+        T myValue;  // should I make this a pointer variable instead?
     };
     int numItems;    // remember to avoid integer division
     int numBuckets;
@@ -107,8 +113,5 @@ class HashMap
     std::vector<std::vector<DataPair*>> vectorOfVectors;
     std::list<DataPair*> myAssociations;    // push back newly created DataPairs to both the vector and list
 };
-
-// Logic:
-// 1) 
 
 #endif /* HashMap_h */

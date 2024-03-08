@@ -7,109 +7,61 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "904919BA-03CD-4BC4-938C-05A4A911532E"
+            uuid = "E9BCC030-D15C-49D2-AA60-AC4471134CDB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BruinTour/main.cpp"
+            filePath = "BruinTour/geodb.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "main()"
-            landmarkType = "9">
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "GeoDatabase::load(map_data_file)"
+            landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "904919BA-03CD-4BC4-938C-05A4A911532E - d1be485583734580"
+                  uuid = "E9BCC030-D15C-49D2-AA60-AC4471134CDB - c36e349c8f24a8e7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "main"
+                  symbolName = "GeoDatabase::load(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt;&gt; const&amp;)"
                   moduleName = "BruinTour"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ankaijin/Desktop/CS32%20Xcode/BruinTour/CS32-Project4/BruinTour/main.cpp"
+                  urlString = "file:///Users/ankaijin/Desktop/CS32%20Xcode/BruinTour/CS32-Project4/BruinTour/geodb.cpp"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "97"
-                  endingLineNumber = "97"
-                  offsetFromSymbolStart = "20">
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "52">
                </Location>
                <Location
-                  uuid = "904919BA-03CD-4BC4-938C-05A4A911532E - d1be485583734580"
+                  uuid = "E9BCC030-D15C-49D2-AA60-AC4471134CDB - c36e349c8f24a8e7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "main"
+                  symbolName = "GeoDatabase::load(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt;&gt; const&amp;)"
                   moduleName = "BruinTour"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ankaijin/Desktop/CS32%20Xcode/BruinTour/CS32-Project4/BruinTour/main.cpp"
+                  urlString = "file:///Users/ankaijin/Desktop/CS32%20Xcode/BruinTour/CS32-Project4/BruinTour/geodb.cpp"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "97"
-                  endingLineNumber = "97"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7B676F05-5B4F-48F2-B258-E7C75C62A976"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BruinTour/main.cpp"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "main()"
-            landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "7B676F05-5B4F-48F2-B258-E7C75C62A976 - d1be4855837345a1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "main"
-                  moduleName = "BruinTour"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ankaijin/Desktop/CS32%20Xcode/BruinTour/CS32-Project4/BruinTour/main.cpp"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "98"
-                  endingLineNumber = "98"
-                  offsetFromSymbolStart = "36">
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "60">
                </Location>
                <Location
-                  uuid = "7B676F05-5B4F-48F2-B258-E7C75C62A976 - d1be4855837345a1"
+                  uuid = "E9BCC030-D15C-49D2-AA60-AC4471134CDB - c36e349c8f24a8e7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "main"
+                  symbolName = "GeoDatabase::load(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt;&gt; const&amp;)"
                   moduleName = "BruinTour"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ankaijin/Desktop/CS32%20Xcode/BruinTour/CS32-Project4/BruinTour/main.cpp"
+                  urlString = "file:///Users/ankaijin/Desktop/CS32%20Xcode/BruinTour/CS32-Project4/BruinTour/geodb.cpp"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "98"
-                  endingLineNumber = "98"
-                  offsetFromSymbolStart = "40">
-               </Location>
-               <Location
-                  uuid = "7B676F05-5B4F-48F2-B258-E7C75C62A976 - d1be4855837345a1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "main"
-                  moduleName = "BruinTour"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ankaijin/Desktop/CS32%20Xcode/BruinTour/CS32-Project4/BruinTour/main.cpp"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "98"
-                  endingLineNumber = "98"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
                   offsetFromSymbolStart = "48">
                </Location>
             </Locations>
@@ -118,94 +70,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E3461C60-8848-4906-AB5D-A6240D4023E4"
+            uuid = "3FD4BE9C-70A3-4B04-9FE9-BF54A81BAB50"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BruinTour/main.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "main()"
-            landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "E3461C60-8848-4906-AB5D-A6240D4023E4 - d1be485583734525"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "main"
-                  moduleName = "BruinTour"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ankaijin/Desktop/CS32%20Xcode/BruinTour/CS32-Project4/BruinTour/main.cpp"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "102"
-                  endingLineNumber = "102"
-                  offsetFromSymbolStart = "276">
-               </Location>
-               <Location
-                  uuid = "E3461C60-8848-4906-AB5D-A6240D4023E4 - d1be485583734525"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "main"
-                  moduleName = "BruinTour"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ankaijin/Desktop/CS32%20Xcode/BruinTour/CS32-Project4/BruinTour/main.cpp"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "102"
-                  endingLineNumber = "102"
-                  offsetFromSymbolStart = "272">
-               </Location>
-               <Location
-                  uuid = "E3461C60-8848-4906-AB5D-A6240D4023E4 - d1be485583734525"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "main"
-                  moduleName = "BruinTour"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ankaijin/Desktop/CS32%20Xcode/BruinTour/CS32-Project4/BruinTour/main.cpp"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "102"
-                  endingLineNumber = "102"
-                  offsetFromSymbolStart = "268">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "19584406-88E3-497D-A7BC-B4E81F48D3BA"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BruinTour/main.cpp"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "main()"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "265DEC53-F845-4C96-8C7D-763379B782A3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BruinTour/main.cpp"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "main()"
             landmarkType = "9">
          </BreakpointContent>
