@@ -14,7 +14,7 @@
 
 using namespace std;
 
-/*
+
  void print_tour(vector<TourCommand>& tcs)
  {
      double total_dist = 0;
@@ -90,9 +90,9 @@ using namespace std;
      else
          print_tour(tcs);
  }
-*/
 
 
+/*
 int main()
 {
     GeoDatabase g1;
@@ -109,4 +109,4 @@ int main()
         cout << please[i].to_string() << endl;
     }
 }
-
+*/
