@@ -27,7 +27,7 @@ class Router: public RouterBase
         bool operator()(const GeoPoint& a, const GeoPoint& b) const
         {
             // set either side to default max value if not found? Shouldn't be possible right?
-            return fValueMap.find(a.to_string()) < fValueMap.find(b.to_string());
+            return fValueMap.find(a.to_string()) > fValueMap.find(b.to_string());
         }
       private:
         const HashMap<double>& fValueMap;

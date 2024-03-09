@@ -56,6 +56,7 @@ using namespace std;
      cout << "Total tour distance: " << std::fixed << std::setprecision(3) << total_dist << " miles\n";
  }
 
+
  int main(int argc, char *argv[])
  {
      if (argc != 3)
@@ -100,8 +101,8 @@ int main()
     Router test1(g1);
     GeoPoint point1("34.0625329", "-118.4470263");
     GeoPoint point2("34.0685657", "-118.4489289");
-    g1.get_poi_location("Diddy Riese", point1);
-    g1.get_poi_location("Ami Sushi", point2);
+    g1.get_poi_location("John Wooden Center", point1);
+    g1.get_poi_location("Diddy Riese", point2);
     vector<GeoPoint> please = test1.route(point1, point2);
     for (int i = 0; i < please.size(); i++)
     {
