@@ -14,6 +14,9 @@
 
 using namespace std;
 
+GeoDatabase::GeoDatabase() {}
+GeoDatabase::~GeoDatabase() {}
+
 bool GeoDatabase::load(const string& map_data_file)
 {
     ifstream infile(map_data_file);

@@ -96,7 +96,14 @@ int main()
 {
     GeoDatabase g1;
     g1.load("/Users/ankaijin/Desktop/CS32 Xcode/BruinTour/mapdata.txt");
-    GeoPoint poiLoc;
-    g1.get_poi_location("", poiLoc);
-    cout << poiLoc.to_string() << endl;
+    
+    Router test1(g1);
+    GeoPoint point1, point2;
+    g1.get_poi_location("Ami Sushi", point1);
+    g1.get_poi_location("Fox Theatre", point2);
+    vector<GeoPoint> please = test1.route(point1, point2);
+    for (int i = 0; i < please.size(); i++)
+    {
+        cout << please[i].to_string() << endl;
+    }
 }

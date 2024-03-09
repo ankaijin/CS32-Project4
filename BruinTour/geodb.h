@@ -19,8 +19,8 @@
 class GeoDatabase : public GeoDatabaseBase
 {
   public:
-    GeoDatabase() {}
-    virtual ~GeoDatabase() {}
+    GeoDatabase();
+    virtual ~GeoDatabase();
     
     virtual bool load(const std::string& map_data_file);
     virtual bool get_poi_location(const std::string& poi, GeoPoint& point) const;   // uses HashMap 2
