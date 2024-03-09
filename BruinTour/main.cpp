@@ -14,6 +14,7 @@
 
 using namespace std;
 
+/*
  void print_tour(vector<TourCommand>& tcs)
  {
      double total_dist = 0;
@@ -88,23 +89,23 @@ using namespace std;
      else
          print_tour(tcs);
  }
+*/
 
 
-/*
 int main()
 {
     GeoDatabase g1;
-    g1.load("/Users/ankaijin/Desktop/CS32 Xcode/BruinTour/mapdata.txt");
+    g1.load("/Users/ankaijin/Desktop/CS32 Xcode/BruinTour/CS32-Project4/BruinTour/mapdata.txt");
     
     Router test1(g1);
     GeoPoint point1("34.0625329", "-118.4470263");
     GeoPoint point2("34.0685657", "-118.4489289");
-    // g1.get_poi_location("Ami Sushi", point1);
-    // g1.get_poi_location("Fox Theater", point2);
+    g1.get_poi_location("Diddy Riese", point1);
+    g1.get_poi_location("Ami Sushi", point2);
     vector<GeoPoint> please = test1.route(point1, point2);
     for (int i = 0; i < please.size(); i++)
     {
         cout << please[i].to_string() << endl;
     }
 }
-*/
+

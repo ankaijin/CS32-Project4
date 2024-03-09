@@ -19,22 +19,18 @@ class Router: public RouterBase
     virtual ~Router();
     virtual std::vector<GeoPoint> route(const GeoPoint& pt1, const GeoPoint& pt2) const;
   private:
-    struct GeoPointCost
+    struct compareCosts // used as comparison operator for priority queue
     {
-        GeoPointCost(GeoPoint p, const double& g, const double& h)
-         : myPoint(p), gScore(g), hScore(h) {}
-        GeoPoint myPoint;
-        double gScore;
-        double hScore;
-    };
-    struct compareCosts // see if there's another way to do this
-    {
-        bool operator()(const GeoPointCost& a, const GeoPointCost& b) const
+      public:
+        compareCosts(const HashMap<double>& fValues)
+         : fValueMap(fValues) {}
+        bool operator()(const GeoPoint& a, const GeoPoint& b) const
         {
-            // Define your custom comparison logic here
-            // For example, return true if 'a' has lower priority than 'b'
-            return (a.gScore) + (a.hScore) > (b.gScore) + (b.hScore);
+            // set either side to default max value if not found? Shouldn't be possible right?
+            return fValueMap.find(a.to_string()) < fValueMap.find(b.to_string());
         }
+      private:
+        const HashMap<double>& fValueMap;
     };
     const GeoDatabaseBase& myDatabase;
 };
