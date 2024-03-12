@@ -46,6 +46,8 @@ bool GeoDatabase::load(const string& map_data_file)
         
         GeoToGeo[geopoint1.to_string()].push_back(Ray(streetName, geopoint2));
         GeoToGeo[geopoint2.to_string()].push_back(Ray(streetName, geopoint1));
+        GeoToStreet[geopoint1.to_string() + geopoint2.to_string()] = streetName;
+        // associate concatenation of the two geoPoints with the streetName
         
         // read in poiNum
         infile >> poiNum;
@@ -58,9 +60,14 @@ bool GeoDatabase::load(const string& map_data_file)
             // bi-directional association with first point
             GeoToGeo[geopoint1.to_string()].push_back(Ray(streetName, geopointMid));
             GeoToGeo[geopointMid.to_string()].push_back(Ray(streetName, geopoint1));
+            GeoToStreet[geopoint1.to_string() + geopointMid.to_string()] = streetName;
+            // associate concatenation of the two geoPoints with streetName
+            
             // bi-directional association with second point
             GeoToGeo[geopoint2.to_string()].push_back(Ray(streetName, geopointMid));
             GeoToGeo[geopointMid.to_string()].push_back(Ray(streetName, geopoint2));
+            GeoToStreet[geopoint2.to_string() + geopointMid.to_string()] = streetName;
+            // associate concatenation of the two geoPoints with streetName
             
             for (int i = poiNum; i > 0; i--)
             {
@@ -74,6 +81,7 @@ bool GeoDatabase::load(const string& map_data_file)
                 // bi-directional association with midpoint
                 GeoToGeo[geopointPOI.to_string()].push_back(Ray("a path", geopointMid));
                 GeoToGeo[geopointMid.to_string()].push_back(Ray("a path", geopointPOI));
+                GeoToStreet[geopointPOI.to_string() + geopointMid.to_string()] = "a path";
             }
         }
     }
@@ -106,11 +114,19 @@ vector<GeoPoint> GeoDatabase::get_connected_points(const GeoPoint& pt) const
 
 string GeoDatabase::get_street_name(const GeoPoint& pt1, const GeoPoint& pt2) const
 {
+    /*
     vector<Ray> sourceVector(0);
     if (GeoToGeo.find(pt1.to_string()) != nullptr)   // find does not return a nullptr
         sourceVector = *(GeoToGeo.find(pt1.to_string()));
     for (int i = 0; i < sourceVector.size(); i++)
         if (sourceVector[i].endpoint.to_string() == pt2.to_string())
             return sourceVector[i].streetName;
+    */
+    const string* findStreet = GeoToStreet.find(pt1.to_string() + pt2.to_string());
+    if (findStreet != nullptr)  // check for combination 1
+        return *findStreet;
+    findStreet = GeoToStreet.find(pt2.to_string() + pt1.to_string());
+    if (findStreet != nullptr)  // check for combination 2
+        return *findStreet;
     return "";  // no segment found
 }

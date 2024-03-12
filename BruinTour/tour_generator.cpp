@@ -86,7 +86,7 @@ vector<TourCommand> TourGenerator::generate_tour(const Stops& stops) const
             prevStreet = myDatabase.get_street_name(prevPoint2, prevPoint);
             street = myDatabase.get_street_name(prevPoint, currPoint);
             turnAngle = angle_of_turn(prevPoint2, prevPoint, currPoint);
-            if ((prevStreet != street) && (turnAngle <= -1 || turnAngle >= 1))
+            if ((prevStreet != street) && (turnAngle <= 359 && turnAngle >= 1))
             {
                 if (turnAngle >= 1 && turnAngle < 180)
                     dir = "left";
