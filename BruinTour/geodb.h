@@ -28,16 +28,7 @@ class GeoDatabase : public GeoDatabaseBase
     virtual std::string get_street_name(const GeoPoint& pt1, const GeoPoint& pt2) const;    // uses HashMap 3
     
   private:  // check if this works
-    struct Ray
-    {
-        Ray()   // default constructor
-         : streetName("") {}
-        Ray(const std::string& street, const GeoPoint& point)
-         : streetName(street), endpoint(point) {}
-        std::string streetName;
-        GeoPoint endpoint;
-    };
-    HashMap<std::vector<Ray>> GeoToGeo; // 1, larger
+    HashMap<std::vector<GeoPoint>> GeoToGeo; // 1, larger
     HashMap<GeoPoint> POIToGeo; // 2, smaller
     HashMap<std::string> GeoToStreet; // 3
 };
